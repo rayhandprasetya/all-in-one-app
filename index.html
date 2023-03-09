@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Final Project</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- This is for clock and date template -->  
+        <div class="template">
+            <p id="clock"></p>
+            <div class="calender">
+                <p id="date"></p>
+                <p id="month"></p>
+            </div>
+        </div>
+        
+        <!-- This is for calculator template -->
+        <div id="calculator">
+            <table>
+                <tr>
+                    <td height="30px" id="title" colspan="4">Calculator</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="text" id="result"></td>
+                </tr>
+                <!-- Create function to be called in javascript -->
+                <tr>
+                    <td height="50px" width="50px" colspan="2"><input type="button" value="AC" class="new" onclick="clr()"/></td>
+                    <td height="50px" width="50px"><input type="button" value="%" class="cal"  onclick="cal('%')"/></td>
+                    <td height="50px" width="50px"><input type="button" class="col" value="/" onclick="cal('/')"/></td>
+                </tr>
+                <tr>
+                    <td height="50px" width="50px"><input type="button" value="7" class="cal" onclick="cal('7')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="8" class="cal" onclick="cal('8')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="9" class="cal" onclick="cal('9')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="x" class="col" onclick="cal('*')"/></td>
+                </tr>
+                <tr>
+                    <td height="50px" width="50px"><input type="button" value="4" class="cal" onclick="cal('4')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="5" class="cal" onclick="cal('5')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="6" class="cal" onclick="cal('6')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="-" class="col" onclick="cal('-')"/></td>
+                </tr>
+                <tr>
+                    <td height="50px" width="50px"><input type="button" value="1" class="cal" onclick="cal('1')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="2" class="cal" onclick="cal('2')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="3" class="cal" onclick="cal('3')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="+" class="col" onclick="cal('+')"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="50px" width="100px"><input type="button" value="0" class="new" onclick="cal('0')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="." class="cal" onclick="cal('.')"/></td>
+                    <td height="50px" width="50px"><input type="button" value="=" class="done" onclick="solve()"/></td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- This is for stopwatch template -->
+        <div class="time-format">
+            <p id="watch">Stopwatch</p>  
+            <div id="display">00:00:00</div> 
+            <div id="handling"> 
+                <button id="start" onclick="start()">Start</button> 
+                <button id="reset" onclick="reset()">Reset</button>
+                <button id="stop" onclick="stop()">Stop</button> 
+            </div>
+        </div> 
+        
+        <!-- JavaScript file -->
+        <script src="script.js"></script>
+        <script type="text/javascript" src="vanilla-tilt.js"></script>
+        <script type="text/javascript">
+            
+            // Glassmorphism Effects. I Got this script from https://micku7zu.github.io/vanilla-tilt.js/.
+            // It will give glassmorphism effect in clock and date template when you point on it
+	        VanillaTilt.init(document.querySelector(".template"), {
+		        max: 25,
+		        speed: 400
+            });
+        </script>
+    </body>
+</html>
